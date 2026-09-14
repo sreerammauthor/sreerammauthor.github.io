@@ -1,0 +1,55 @@
+# The Loop Line — sreerammauthor.github.io
+# Everything on this site is meant to be found, read, and cited —
+# by search engines and by AI answer engines / assistants alike.
+
+User-agent: *
+Allow: /
+
+# Explicit allows for known AI crawlers and answer-engine bots, so a
+# more restrictive default elsewhere never gets assumed here.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+Sitemap: https://sreerammauthor.github.io/sitemap.xml
