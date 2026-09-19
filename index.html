@@ -39,18 +39,36 @@
   "bookFormat": "https://schema.org/EBook",
   "numberOfPages": 344,
   "image": "https://sreerammauthor.github.io/cover.jpg",
-  "offers": {
-    "@type": "Offer",
-    "url": "https://books2read.com/u/bp5pnq",
-    "priceCurrency": "USD",
-    "price": "4.99",
-    "availability": "https://schema.org/PreOrder"
-  },
-  "potentialAction": {
-    "@type": "OrderAction",
-    "target": "https://books2read.com/u/bp5pnq",
-    "name": "Pre-order the ebook"
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "url": "https://www.amazon.com/dp/B0HJSX1V1X",
+      "seller": { "@type": "Organization", "name": "Amazon" },
+      "priceCurrency": "USD",
+      "price": "4.99",
+      "availability": "https://schema.org/PreOrder"
+    },
+    {
+      "@type": "Offer",
+      "url": "https://books2read.com/u/4AnYjA",
+      "seller": { "@type": "Organization", "name": "Books2Read (Apple Books, Kobo, Barnes & Noble, and more)" },
+      "priceCurrency": "USD",
+      "price": "4.99",
+      "availability": "https://schema.org/PreOrder"
+    }
+  ],
+  "potentialAction": [
+    {
+      "@type": "OrderAction",
+      "target": "https://www.amazon.com/dp/B0HJSX1V1X",
+      "name": "Buy on Amazon"
+    },
+    {
+      "@type": "OrderAction",
+      "target": "https://books2read.com/u/4AnYjA",
+      "name": "Buy from other retailers"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -293,9 +311,11 @@
       <h1>The Loop Line</h1>
       <p class="hero-hook">He's made the same trip twice a year for eleven years. This time, someone at the other end remembers it too.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://books2read.com/u/bp5pnq" target="_blank" rel="noopener">Pre-order the ebook</a>
+        <a class="btn btn-primary" href="https://www.amazon.com/dp/B0HJSX1V1X" target="_blank" rel="noopener">Buy on Amazon</a>
+        <a class="btn btn-ghost" href="https://books2read.com/u/4AnYjA" target="_blank" rel="noopener">More retailers</a>
         <a class="btn btn-ghost" href="#arc">Request an advance copy</a>
       </div>
+      <p class="store-note" style="margin:-4px 0 18px;">Google Play Books listing coming soon.</p>
       <div class="meta-row">
         <span><strong>Releases</strong> Oct 19, 2026</span>
         <span><strong>Format</strong> Kindle now · paperback soon</span>
@@ -392,7 +412,7 @@
       </details>
       <details class="faq-item">
         <summary>When does it release?</summary>
-        <p>October 19, 2026. The ebook is available now for pre-order — currently on Amazon, with Apple Books, Kobo, Barnes &amp; Noble, and a paperback edition following via the same link soon after.</p>
+        <p>October 19, 2026. The ebook is available now for pre-order — direct on Amazon, or through a universal link for Apple Books, Kobo, Barnes &amp; Noble, and a paperback edition following soon after. Google Play Books is coming soon.</p>
       </details>
       <details class="faq-item">
         <summary>Is it part of a series?</summary>
@@ -404,7 +424,7 @@
       </details>
       <details class="faq-item">
         <summary>Where can I buy it?</summary>
-        <p>The ebook is available for pre-order now through <a href="https://books2read.com/u/bp5pnq" target="_blank" rel="noopener">this universal link</a>, which routes to Amazon today and will automatically add Apple Books, Kobo, Barnes &amp; Noble, and the paperback edition as each becomes available — no need to check back for a new link each time.</p>
+        <p>Directly on <a href="https://www.amazon.com/dp/B0HJSX1V1X" target="_blank" rel="noopener">Amazon</a>, or through <a href="https://books2read.com/u/4AnYjA" target="_blank" rel="noopener">this universal link</a>, which will automatically add Apple Books, Kobo, Barnes &amp; Noble, and the paperback edition as each becomes available — no need to check back for a new link each time. A direct Google Play Books link is coming soon.</p>
         <p class="store-note">Already on Goodreads? Search for the title — a page should already be listed there via the Amazon listing, with more retailer links appearing as they go live.</p>
       </details>
     </div>
@@ -415,7 +435,8 @@
   <div class="wrap footer-row">
     <span>© 2026 Sreeram M. All rights reserved.</span>
     <div class="footer-links">
-      <a href="https://books2read.com/u/bp5pnq" target="_blank" rel="noopener">Buy the ebook</a>
+      <a href="https://www.amazon.com/dp/B0HJSX1V1X" target="_blank" rel="noopener">Amazon</a>
+      <a href="https://books2read.com/u/4AnYjA" target="_blank" rel="noopener">More retailers</a>
       <a href="#arc">Advance copies</a>
       <a href="#faq">FAQ</a>
       <a href="mailto:bellari.dcuts@gmail.com">Contact</a>
