@@ -111,7 +111,7 @@
     {
       "@type": "Question",
       "name": "Can I get an early copy of The Loop Line before it's released?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. A limited run of 20 free advance reader copies is available before launch, in exchange for an honest review around release day. Request one on this page." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. A limited run of 20 free advance reader copies is available before launch, in exchange for an honest review on Amazon or Goodreads around release day. Request one through the StoryOrigin link on this page — it handles delivery of the ebook directly." }
     },
     {
       "@type": "Question",
@@ -371,8 +371,9 @@
       <div class="signup-copy">
         <span class="slots-pill"><span class="dot"></span> 20 advance copies available</span>
         <h3>Get an advance reader copy</h3>
-        <p>In exchange for an honest review on Amazon or Goodreads around release day, I'll send you a free advance copy of the ebook — first come, first served, while the 20 spots last.</p>
-        <p>Not looking for a review copy? Leave the box unchecked below and I'll just let you know when the book goes live everywhere.</p>
+        <p>In exchange for an honest review on Amazon or Goodreads around release day, I'll send you a free advance copy of the ebook — first come, first served, while the 20 spots last. Copies are sent through StoryOrigin, which handles delivery and reminders for you.</p>
+        <a class="btn btn-primary" href="https://storyoriginapp.com/reviewcopies/01a0bb30-af3e-7c5c-943e-d44f91734995" target="_blank" rel="noopener" style="margin-top:4px;">Get my advance copy →</a>
+        <p style="margin-top:20px;">Not looking for a review copy? Leave your email and I'll just let you know when the book goes live everywhere.</p>
       </div>
       <form class="arc-form" id="arcForm">
         <div class="field">
@@ -383,14 +384,10 @@
           <label for="email">Email</label>
           <input id="email" name="email" type="email" required autocomplete="email">
         </div>
-        <label class="checkbox-row">
-          <input type="checkbox" id="wantsArc" name="wantsArc" checked>
-          <span>Send me a free advance copy (I'll post an honest review around launch)</span>
-        </label>
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Send my request</button>
+          <button type="submit" class="btn btn-ghost">Just keep me updated</button>
         </div>
-        <p class="form-note" id="arcFormNote">Your details go straight to my reader list — no email app needed.</p>
+        <p class="form-note" id="arcFormNote">Your details go straight to my reader list — no email app needed. For a free advance copy, use the button on the left instead.</p>
       </form>
     </div>
   </section>
@@ -435,7 +432,7 @@
       </details>
       <details class="faq-item">
         <summary>Can I get an early copy?</summary>
-        <p>Yes. A limited run of 20 free advance reader copies is available before launch, in exchange for an honest review around release day. Request one above.</p>
+        <p>Yes. A limited run of 20 free advance reader copies is available before launch, in exchange for an honest review on Amazon or Goodreads around release day. Request one above — copies are sent through StoryOrigin, which handles delivery and review reminders directly.</p>
       </details>
       <details class="faq-item">
         <summary>Where can I buy it?</summary>
@@ -473,7 +470,9 @@
     var ENTRY_NAME = "entry.566213447";
     var ENTRY_EMAIL = "entry.1968374820";
     var ENTRY_ARC = "entry.1108811420";
-    var ARC_YES = "Yes — send me an ARC (limited to first 20 readers)";
+    // ARCs are now fulfilled entirely through StoryOrigin (see the button
+    // above this form) — this form is just the "notify me at launch" list,
+    // so it always records the non-ARC answer for that existing sheet column.
     var ARC_NO = "No thanks, just keep me updated";
 
     var form = document.getElementById('arcForm');
@@ -484,12 +483,11 @@
       e.preventDefault();
       var name = document.getElementById('name').value.trim();
       var email = document.getElementById('email').value.trim();
-      var wantsArc = document.getElementById('wantsArc').checked;
 
       var params = new URLSearchParams();
       params.set(ENTRY_NAME, name);
       params.set(ENTRY_EMAIL, email);
-      params.set(ENTRY_ARC, wantsArc ? ARC_YES : ARC_NO);
+      params.set(ENTRY_ARC, ARC_NO);
 
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending…";
