@@ -145,49 +145,48 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;0,700;1,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Cinzel:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  /* Loop Line brand palette — matches the book cover: near-black ground,
+     warm cream ink, and the nine converging-thread colors from the art. */
   :root{
+    --bg:#08090c; --surface:#15141a; --surface-2:#1e1c24;
+    --ink:#f0e9d8; --ink-soft:#c9bda9; --ink-faint:#8f8578;
+    --accent:#cfa15f; --accent-ink:#1a1408;
+    --accent-2:#9c7690;
+    --line:#332f2a;
+    --band-1:#6b80a0; --band-2:#8a7a5e; --band-3:#c08f3e; --band-4:#7f9070;
+    --band-5:#5c7a8a; --band-6:#9c7690; --band-7:#a3a35a; --band-8:#6b5570; --band-9:#c9a35f;
+    --shadow: 0 18px 46px -20px rgba(0,0,0,0.65);
+    color-scheme: dark;
+  }
+  /* A lighter, paper-toned alternate — available if a light toggle is
+     ever added (set data-theme="light" on <html>); not used by default,
+     since the book's own brand look is the dark one above. */
+  :root[data-theme="light"]{
     --bg:#efe6d7; --surface:#fbf8f1; --surface-2:#e4d9c6;
     --ink:#241f1a; --ink-soft:#5c5044; --ink-faint:#8a7c6b;
-    --accent:#3d5866; --accent-ink:#f4efe4;
+    --accent:#8a6a2e; --accent-ink:#f4efe4;
     --accent-2:#5c3f56;
     --line:#d9cbb2;
-    --band-1:#6b7a8f; --band-2:#8a7256; --band-3:#b88a4e; --band-4:#7b8a6b;
-    --band-5:#5f7a83; --band-6:#9c7a8a; --band-7:#a3a06b; --band-8:#705a71; --band-9:#c2a36a;
     --shadow: 0 18px 40px -22px rgba(36,31,26,0.45);
     color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#16130f; --surface:#211c16; --surface-2:#2b241c;
-      --ink:#efe6d7; --ink-soft:#c9bda9; --ink-faint:#93887a;
-      --accent:#8fb2c2; --accent-ink:#16211a;
-      --accent-2:#c79bbb;
-      --line:#3a3227;
-      --shadow: 0 18px 46px -20px rgba(0,0,0,0.6);
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#16130f; --surface:#211c16; --surface-2:#2b241c;
-    --ink:#efe6d7; --ink-soft:#c9bda9; --ink-faint:#93887a;
-    --accent:#8fb2c2; --accent-ink:#16211a;
-    --accent-2:#c79bbb;
-    --line:#3a3227;
-    --shadow: 0 18px 46px -20px rgba(0,0,0,0.6);
   }
 
   *{ box-sizing:border-box; }
   body{
     background:var(--bg); color:var(--ink);
-    font-family:"Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    line-height:1.6; -webkit-font-smoothing:antialiased;
+    font-family:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-size:1.14rem;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
   }
   h1,h2,h3,.display{
-    font-family:"Fraunces", Georgia, "Times New Roman", serif;
+    font-family:"Cinzel", Georgia, "Times New Roman", serif;
     text-wrap:balance; font-weight:600; color:var(--ink); margin:0;
+    letter-spacing:0.01em;
   }
+  h1{ text-transform:uppercase; }
   a{ color:var(--accent); }
   .wrap{ max-width:1040px; margin:0 auto; padding-inline:20px; }
   section{ padding-block:64px; }
@@ -196,8 +195,8 @@
   }
   .band-strip span{ flex:1; }
   .eyebrow{
-    font-family:"Public Sans", sans-serif; text-transform:uppercase; letter-spacing:.14em;
-    font-size:.72rem; color:var(--ink-faint); font-weight:600;
+    font-family:"Cinzel", serif; text-transform:uppercase; letter-spacing:.32em;
+    font-size:.72rem; color:var(--accent); font-weight:600;
   }
 
   /* ---- Hero ---- */
@@ -208,17 +207,17 @@
   @media (max-width:720px){ .hero-grid{ grid-template-columns:1fr; } }
   .cover-frame{
     position:relative; border-radius:6px; overflow:hidden; box-shadow:var(--shadow);
-    transform:rotate(-1.2deg); transition:transform .5s ease;
+    transform:rotate(-1.2deg); transition:transform .5s ease, box-shadow .5s ease;
   }
-  .cover-frame:hover{ transform:rotate(0deg); }
+  .cover-frame:hover{ transform:rotate(0deg); box-shadow:var(--shadow), 0 0 50px -10px rgba(207,161,95,0.4); }
   .cover-frame img{ display:block; width:100%; height:auto; }
   .hero-copy h1{ font-size:clamp(2.2rem, 5vw, 3.4rem); line-height:1.05; margin-bottom:14px; }
-  .hero-hook{ font-size:1.15rem; color:var(--ink-soft); max-width:46ch; margin-bottom:28px; font-style:italic; font-family:"Fraunces", serif; }
+  .hero-hook{ font-size:1.25rem; color:var(--ink-soft); max-width:46ch; margin-bottom:28px; font-style:italic; font-family:"Cormorant Garamond", serif; }
   .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
   .btn{
     display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:100px;
     font-weight:600; font-size:.95rem; text-decoration:none; border:1.5px solid transparent;
-    cursor:pointer; font-family:"Public Sans", sans-serif;
+    cursor:pointer; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     transition: transform .15s ease, box-shadow .15s ease;
   }
   .btn:hover{ transform:translateY(-1px); }
@@ -244,7 +243,7 @@
   /* ---- Excerpt ---- */
   .excerpt-heading{ text-align:center; margin-bottom:28px; }
   .excerpt-part{ font-size:.82rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-faint); font-weight:600; margin-bottom:4px; }
-  .excerpt-byline{ font-family:"Fraunces", serif; font-style:italic; font-size:1.1rem; color:var(--ink-soft); }
+  .excerpt-byline{ font-family:"Cormorant Garamond", serif; font-style:italic; font-size:1.15rem; color:var(--ink-soft); }
   .excerpt-card p{ font-size:1.05rem; max-width:66ch; margin-inline:auto; }
   .excerpt-chapter{
     font-size:1.15rem; margin:32px auto 16px; max-width:66ch; text-align:left;
@@ -285,7 +284,7 @@
   .field label{ font-size:.82rem; font-weight:600; color:var(--ink-soft); }
   .field input{
     padding:11px 14px; border-radius:8px; border:1.5px solid var(--line); background:var(--bg);
-    color:var(--ink); font-size:.95rem; font-family:inherit;
+    color:var(--ink); font-size:.95rem; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
   .field input:focus-visible{ outline:2.5px solid var(--accent); outline-offset:1px; }
   .checkbox-row{ display:flex; align-items:flex-start; gap:10px; font-size:.88rem; color:var(--ink-soft); }
@@ -309,7 +308,7 @@
   .author-row{ display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; }
   .author-badge{
     width:64px; height:64px; border-radius:50%; background:var(--accent); color:var(--accent-ink);
-    display:flex; align-items:center; justify-content:center; font-family:"Fraunces",serif; font-size:1.4rem;
+    display:flex; align-items:center; justify-content:center; font-family:"Cinzel",serif; font-size:1.25rem;
     flex:0 0 auto; box-shadow:var(--shadow);
   }
   .author-row p{ color:var(--ink-soft); max-width:60ch; margin:0; }
@@ -317,7 +316,7 @@
   .social-link{
     display:inline-flex; align-items:center; padding:8px 16px; border-radius:100px;
     border:1.5px solid var(--line); color:var(--ink-soft); text-decoration:none;
-    font-size:.85rem; font-weight:600; font-family:"Public Sans", sans-serif;
+    font-size:.85rem; font-weight:600; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     transition: transform .15s ease, border-color .15s ease, color .15s ease;
   }
   .social-link:hover{ transform:translateY(-1px); border-color:var(--accent); color:var(--accent); }
@@ -348,7 +347,7 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div class="cover-frame">
-      <img src="cover.jpg" alt="Cover of The Loop Line by Sreeram M — a title panel over nine horizontal color bands." width="600" height="900">
+      <img src="cover.jpg" alt="Cover of The Loop Line by Sreeram M — nine colored threads converging on a single glowing point against a black ground." width="600" height="900">
     </div>
     <div class="hero-copy">
       <p class="eyebrow">A debut novel in ten parts · Sreeram M</p>
